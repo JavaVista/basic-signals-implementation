@@ -1,16 +1,57 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Signals Implementation</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>Parcel Signals App</h1>
-    <p>Edit <code>src/index.html</code> to get started!</p>
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Signals Implementation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 p-6">
+  <div class="container mx-auto space-y-8">
+    <h1 class="text-4xl text-center text-blue-700">Basic Signals Implementation</h1>
+
+    <section class="bg-white p-6 rounded-md shadow-md">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Core Concepts: Signal, Read, Update</h2>
+      <div class="space-y-4">
+        <div class="flex items-center gap-4">
+          <span class="text-xl overline font-medium text-gray-700">Counter:</span>
+          <span id="counterValue" class="text-xl font-semibold text-blue-600">0</span>
+        </div>
+        <button id="incrementButton"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold mt-2 py-2 px-4 rounded-md">Increment
+          Counter</button>
+        <p class="text-gray-500 mt-2">Click the button to update the signal. The display updates automatically.</p>
+      </div>
+    </section>
+
+    <section class="bg-white p-6 rounded-md shadow-md">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Two-Way Binding</h2>
+      <div class="space-y-4">
+        <input type="text" id="nameInput" placeholder="Enter your name"
+          class="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm text-gray-900 mb-2">
+        <p class="text-lg text-gray-700">Hello, <span id="displayName" class="font-medium text-green-900">!</span>
+        </p>
+        <p class="text-gray-500 mt-2">Type in the input box. The displayed name updates automatically.</p>
+      </div>
+    </section>
+    <div class="mt-8 p-4 bg-gray-100 rounded-md shadow-sm">
+      <p class="text-sm">
+        <strong>Demo explanation:</strong> This demonstrates the basic implementation and core concepts of Signals.
+        A signal represents a reactive value that can be read (by calling its function) and updated. In this demo:
+        Clicking the button updates the counter signal, and only UI elements that directly depend on the signal (like
+        the
+        displayed counter) are updated. Also, in the Two-Way Binding example, the input field updates the corresponding
+        signal,
+        reflecting the changes immediately.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- <script src="./signals.js"></script>
+  <script src="./index.js"></script> -->
+</body>
+
 </html>
