@@ -19,7 +19,7 @@ export function signal(initialValue) {
         subscribers.forEach(subscription => subscription());
     }
 
-    function readData() {
+    function getData() {
         if (currentRunningEffect) {
             subscribers.add(currentRunningEffect);
         }
@@ -32,7 +32,7 @@ export function signal(initialValue) {
     }
 
     return {
-        readData,
+        readData: getData,
         setData,
         updateData,
     };

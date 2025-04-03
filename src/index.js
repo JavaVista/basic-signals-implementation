@@ -11,7 +11,7 @@ function incrementCounter() {
 }
 
 effect(() => {  // Side effect
-    counterValueDisplay.textContent = counter.readData(); // Read state, update UI
+    counterValueDisplay.textContent = counter.getData(); // Read state, update UI
 });
 
 incrementButton.addEventListener('click', incrementCounter);
@@ -19,12 +19,12 @@ incrementButton.addEventListener('click', incrementCounter);
 // Computed Value
 const price = signal(10);     // Observable state
 const quantity = signal(2);  // Observable state
-const total = computed(() => price.readData() * quantity.readData());    //  Calculate Computed value
+const total = computed(() => price.getData() * quantity.getData());    //  Calculate Computed value
 const quantityInput = document.getElementById('quantityInput');
 const totalValueDisplay = document.getElementById('totalValue');
 
 effect(() => {
-    totalValueDisplay.textContent = total.readData(); // Update UI
+    totalValueDisplay.textContent = total.getData(); // Update UI
 });
 
 quantityInput.addEventListener('input', (event) => {
@@ -37,7 +37,7 @@ const nameInput = document.getElementById('nameInput');
 const displayNameDisplay = document.getElementById('displayName');
 
 effect(() => {  // Side effect
-    displayNameDisplay.textContent = nameSignal.readData(); // Update UI
+    displayNameDisplay.textContent = nameSignal.getData(); // Update UI
 });
 
 nameInput.addEventListener('input', (event) => {
