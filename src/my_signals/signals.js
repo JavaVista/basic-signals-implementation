@@ -28,11 +28,11 @@ export function signal(initialValue) {
 
     function updateData(updateFunction) {
         const newValue = updateFunction(value);
-        setData(newValue); 
+        setData(newValue);
     }
 
     return {
-        readData: getData,
+        getData,
         setData,
         updateData,
     };
@@ -53,7 +53,7 @@ export function computed(computeCallback) {
 
     // Return the signal with only the read capability
     return {
-        readData: result.readData
+        getData: result.getData
     };
 }
 
