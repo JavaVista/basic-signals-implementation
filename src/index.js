@@ -1,4 +1,8 @@
-import { signal, effect, computed } from './my_signals/signals.js';
+
+import { demonstrateSignals } from './my_signals/signals.js';
+
+// Run the demonstration
+demonstrateSignals();
 
 // Observable State and Side Effects
 const counter = signal(0);  // Observable state
